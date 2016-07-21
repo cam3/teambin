@@ -1,0 +1,58 @@
+#header_notification_bar {
+	    padding-right: 15px;
+}
+
+.completed-overlay {
+
+    position: absolute;
+    text-align: center;
+    top: 5px;
+    background-color: rgba(255,255,255,0.65);
+    left: 5px;
+    bottom: -50px;
+    right: 5px;
+    z-index: 1;
+}
+
+.mt-step-title {
+	    font-size: 10px !important;
+    font-weight: 400;
+    position: relative;
+}
+
+body {
+    background: #2f353b;
+}
+
+.page-header.navbar .page-logo .logo-default {
+    margin: 18px 10px 0;
+    width: 180px;
+}
+
+.module-box {
+    height:250px;
+}
+
+.module-box .details {
+    margin-top: 100px;
+}
+
+.module-box .more {
+    padding: 20px 10px;
+    font-size: 18px;
+}
+.progress {
+
+    margin-bottom: 0px;
+
+}
+.module-box .visual>i {
+    
+    opacity: .4 !important;
+   
+}
+.dashboard-stat .details {
+    position: relative;
+    right: 0px;
+
+}

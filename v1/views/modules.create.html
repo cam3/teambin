@@ -1,0 +1,206 @@
+<!-- BEGIN PAGE BREADCRUMB -->
+<ul class="page-breadcrumb breadcrumb">
+    <li>
+        <a href="#/dashboard">Dashboard</a>
+        <i class="fa fa-circle"></i>
+        <a href="#/modules/list">Module List</a>
+        <i class="fa fa-circle"></i>
+    </li>
+    <li class="active">Create Module</li>
+</ul>
+<!-- END PAGE BREADCRUMB -->
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN: ACCORDION DEMO -->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-green-sharp">
+                    <i class="icon-settings font-green-sharp"></i>
+                    <span class="caption-subject bold uppercase">Create Module</span>
+                    <span class="caption-helper hide"></span>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+            <form action="#" id="form-username" class="form-horizontal form-bordered ng-pristine ng-valid">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-5">Module Name</label>
+                            <div class="col-md-7">
+                                <div class="input-icon right">
+                                    <input type="text" class="form-control" name="name" ng-model="newModule.name">
+                                </div>
+                                <div class="help-block"> General Name of the Module </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-5">Module Subtitle</label>
+                            <div class="col-md-7">
+                                <div class="input-icon right">
+                                    <input type="text" class="form-control" name="subtitle" ng-model="newModule.subtitle" > </div>
+                                <div class="help-block"> More specific Module Focus </div>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label class="control-label col-md-5">Module Color</label>
+                            
+                                <div class="col-md-5">
+                                                                <select class="form-control input-lg" onchange="colorselected(this);" name="color" ng-model="newModule.color">
+                                                                    <option value="default" class="bg-default bg-font-default">default</option>
+                                                                    <option value="dark" class="bg-dark bg-font-dark">dark</option>
+                                                                    <option value="blue" class="bg-blue bg-font-blue">blue</option>
+                                                                    <option value="blue-madison" class="bg-blue-madison bg-font-blue-madison">blue-madison</option>
+                                                                    <option value="blue-chambray" class="bg-blue-chambray bg-font-blue-chambray">blue-chambray</option>
+                                                                    <option value="blue-ebonyclay" class="bg-blue-ebonyclay bg-font-blue-ebonyclay">blue-ebonycaly</option>
+                                                                    <option value="blue-hoki" class="bg-blue-hoki bg-font-blue-hoki">blue-hoki</option>
+                                                                    <option value="blue-steel" class="bg-blue-steel bg-font-blue-steel">blue-steel</option>
+                                                                    <option value="blue-soft" class="bg-blue-soft bg-font-blue-soft">blue-soft</option>
+                                                                    <option value="blue-dark" class="bg-blue-dark bg-font-blue-dark">blue-dark</option>
+                                                                    <option value="blue-sharp" class="bg-blue-sharp bg-font-blue-sharp">blue-sharp</option>
+                                                                    <option value="blue-oleo" class="bg-blue-oleo bg-font-blue-oleo">blue-oleo</option>
+                                                                    <option value="green" class="bg-green bg-font-green">green</option>
+                                                                    <option value="green-meadow" class="bg-green-meadow bg-font-green-meadow">green-meadow</option>
+                                                                    <option value="green-seagreen" class="bg-green-seagreen bg-font-green-seagreen">green-seagreen</option>
+                                                                    <option value="green-turquoise" class="bg-green-turquoise bg-font-green-turquoise">green-turquoise</option>
+                                                                    <option value="green-haze" class="bg-green-haze bg-font-green-haze">green-haze</option>
+                                                                    <option value="green-jungle" class="bg-green-jungle bg-font-green-jungle">green-jungle</option>
+                                                                    <option value="green-soft" class="bg-green-soft bg-font-green-soft">green-soft</option>
+                                                                    <option value="green-dark" class="bg-green-dark bg-font-green-dark">green-dark</option>
+                                                                    <option value="green-sharp" class="bg-green-sharp bg-font-green-sharp">green-sharp</option>
+                                                                    <option value="green-steel" class="bg-green-steel bg-font-green-steel">green-steel</option>
+                                                                    <option value="grey" class="bg-grey bg-font-grey">grey</option>
+                                                                    <option value="grey-cararra" class="bg-grey-cararra bg-font-grey-cararra">grey-cararra</option>
+                                                                    <option value="grey-gallery" class="bg-grey-gallery bg-font-grey-gallery">grey-gallery</option>
+                                                                    <option value="grey-cascade" class="bg-grey-cascade bg-font-grey-cascade">grey-cascade</option>
+                                                                    <option value="grey-silver" class="bg-grey-silver bg-font-grey-silver">grey-silver</option>
+                                                                    <option value="grey-salsa" class="bg-grey-salsa bg-font-grey-salsa">grey-salsa</option>
+                                                                    <option value="grey-salt" class="bg-grey-salt bg-font-grey-salt">grey-salt</option>
+                                                                    <option value="grey-mint" class="bg-grey-mint bg-font-grey-mint">grey-mint</option>
+                                                                    <option value="red" class="bg-red bg-font-red">red</option>
+                                                                    <option value="red-pink" class="bg-red-pink bg-font-red-pink">red-pink</option>
+                                                                    <option value="red-sunglo" class="bg-red-sunglo bg-font-red-sunglo">red-sunglo</option>
+                                                                    <option value="red-intense" class="bg-red-intense bg-font-red-intense">red-intense</option>
+                                                                    <option value="red-thunderbird" class="bg-red-thunderbird bg-font-red-thunderbird">red-thunderbird</option>
+                                                                    <option value="red-flamingo" class="bg-red-flamingo bg-font-red-flamingo">red-flamingo</option>
+                                                                    <option value="red-soft" class="bg-red-soft bg-font-red-soft">red-soft</option>
+                                                                    <option value="red-haze" class="bg-red-haze bg-font-red-haze">red-haze</option>
+                                                                    <option value="red-mint" class="bg-red-mint bg-font-red-mint">red-mint</option>
+                                                                    <option value="yellow" class="bg-yellow bg-font-yellow">yellow</option>
+                                                                    <option value="yellow-gold" class="bg-yellow-gold bg-font-yellow-gold">yellow-gold</option>
+                                                                    <option value="yellow-casablanca" class="bg-yellow-casablanca bg-font-yellow-casablanca">yellow-casablanca</option>
+                                                                    <option value="yellow-crusta" class="bg-yellow-crusta bg-font-yellow-crusta">yellow-crusta</option>
+                                                                    <option value="yellow-lemon" class="bg-yellow-lemon bg-font-yellow-lemon">yellow-lemon</option>
+                                                                    <option value="yellow-saffron" class="bg-yellow-saffron bg-font-yellow-saffron">yellow-saffron</option>
+                                                                    <option value="yellow-soft" class="bg-yellow-soft bg-font-yellow-soft">yellow-soft</option>
+                                                                    <option value="yellow-haze" class="bg-yellow-haze bg-font-yellow-haze">yellow-haze</option>
+                                                                    <option value="yellow-mint" class="bg-yellow-mint bg-font-yellow-mint">yellow-mint</option>
+                                                                    <option value="purple" class="bg-purple bg-font-purple">purple</option>
+                                                                    <option value="purple-plum" class="bg-purple-plum bg-font-purple-plum">purple-plum</option>
+                                                                    <option value="purple-medium" class="bg-purple-medium bg-font-purple-medium">purple-medium</option>
+                                                                    <option value="purple-studio" class="bg-purple-studio bg-font-purple-studio">purple-studio</option>
+                                                                    <option value="purple-wisteria" class="bg-purple-wisteria bg-font-purple-wisteria">purple-wisteria</option>
+                                                                    <option value="purple-seance" class="bg-purple-seance bg-font-purple-seance">purple-seance</option>
+                                                                    <option value="purple-intense" class="bg-purple-intense bg-font-purple-intense">purple-intense</option>
+                                                                    <option value="purple-sharp" class="bg-purple-sharp bg-font-purple-sharp">purple-sharp</option>
+                                                                    <option value="purple-soft" class="bg-purple-soft bg-font-purple-soft">purple-soft</option>
+
+
+
+
+
+
+
+                                                                </select>
+                                                                
+                                                            </div>
+                                                            <div class="col-md-2"><div style="width:50px;height:50px;" id="colored"></div></div>
+
+               </div>
+
+                                        <div class="form-group">
+                            <label class="control-label col-md-5">Module Icon</label>
+                            
+                                <div class="col-md-5">
+                                <select class="form-control input-lg" name="color" ng-model="newModule.icon">
+                                    <option value="fa fa-industry" class="">Industry</option>
+                                    <option value="fa fa-hourglass-start" class="">Hourglass Start</option>
+                                    <option value="fa fa-map" class="">Map</option>
+                                    <option value="fa fa-coffee" class="">Coffee</option>
+                                    <option value="fa fa-cog" class="">Cog</option>
+                                    <option value="fa fa-cogs" class="">3 Cogs</option>
+                                    <option value="fa fa-comments" class="">Chat Bubbles</option>
+                                    <option value="fa fa-cubes" class="">Boxes</option>
+                                    <option value="fa fa-desktop" class="">Computer Monitor</option>
+                                    <option value="fa fa-diamond" class="">Diamond</option>
+                                    <option value="fa fa-envelope" class="">Envelope</option>
+                                    <option value="fa fa-feed" class="">Wireless Signal</option>
+                                    <option value="fa fa-fire" class="">Fire</option>
+                                    <option value="fa fa-group" class="">People</option>
+                                    <option value="fa fa-globe" class="">Globe</option>
+                                    <option value="fa fa-legal" class="">Gavel</option>
+                                    <option value="fa fa-magnet" class="">Magnet</option>
+                                    <option value="fa fa-money" class="">Money</option>
+                                    <option value="fa fa-microphone" class="">Microphone</option>
+                                </select>
+                                                                
+                                </div>
+                                <div class="col-md-2" style="font-size: 30px;"><i ng-class="newModule.icon"></i></div>
+
+</div>
+                        
+                    </div> 
+                </div>
+                        
+           
+                     
+                            
+
+
+    <div class="col-md-4">
+
+
+            <div class="dashboard-stat module-box default" ng-class="newModule.color">
+
+                <div class="visual">
+                    <i ng-class="newModule.icon"></i>
+                </div>
+                <div class="details">
+                    <div class="number"> {{newModule.name}} </div>
+                    <div class="desc"> {{newModule.subtitle}} </div>
+                </div>
+
+                <a class="more"> Start Module
+                    
+                </a>
+
+            </div>
+
+
+    </div></div>
+                        </div>
+                        
+                    </div>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button type="submit" class="btn purple">
+                                    <i class="fa fa-check"></i> Submit</button>
+                                <button type="button" class="btn default">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
+<!-- END MAIN CONTENT -->
+<!-- BEGIN MAIN JS-->
+<script>
+function colorselected(obj) {
+    $( "#colored" ).attr('class', 'bg-'+obj.value);
+};
+</script>
+<!-- BEGIN MAIN JS -->
+    

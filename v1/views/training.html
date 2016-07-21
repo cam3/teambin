@@ -1,0 +1,77 @@
+<!-- BEGIN PAGE BREADCRUMB -->
+<ul class="page-breadcrumb breadcrumb">
+    <li>
+        <a href="#">Training Modules</a>
+        <i class="fa fa-circle"></i>
+    </li>
+</ul>
+<!-- END PAGE BREADCRUMB -->
+<!-- BEGIN MAIN CONTENT -->
+<div class="row" ng-controller="TrainingController">
+    <div class="col-md-12">
+        <!-- BEGIN: ACCORDION DEMO -->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-green-sharp">
+                    <i class="icon-settings font-green-sharp"></i>
+                    <span class="caption-subject bold uppercase">Module List</span>
+                    <span class="caption-helper hide"></span>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-circle btn-icon-only btn-default" href="#">
+                        <i class="icon-cloud-upload"></i>
+                    </a>
+                    <a class="btn btn-circle btn-icon-only btn-default" href="#">
+                        <i class="icon-wrench"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body"> 
+
+
+
+
+     <div class="row">
+
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat="module in training">
+         <div class="progress progress-striped active">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                        <span class="sr-only"> 20% Complete </span>
+                                    </div>
+                                </div>
+            <div class="dashboard-stat module-box" ng-class="module.color">
+                <div class="mt-element-ribbon">
+                                                        <div class="ribbon ribbon-right ribbon-shadow ribbon-color-primary uppercase">Completed!</div>
+                                                    </div>
+                <div class="visual">
+                    <i ng-class="module.icon"></i>
+                </div>
+                <div class="details">
+                    <div class="number"> {{module.name}} </div>
+                    <div class="desc"> {{module.subtitle}} </div>
+                </div>
+
+                <a class="more" ng-href="#/module/{{module.id}}"> Start Module
+                    
+                </a>
+
+            </div>
+
+        </div>
+
+       
+    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MAIN CONTENT -->
+<!-- BEGIN MAIN JS-->
+<script>
+    // call any jquery or angularjs code ehre
+</script>
+<!-- BEGIN MAIN JS -->
