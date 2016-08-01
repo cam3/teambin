@@ -280,6 +280,10 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             '../assets/global/plugins/typeahead/handlebars.min.js',
                             '../assets/global/plugins/typeahead/typeahead.bundle.min.js',
                             '../assets/pages/scripts/components-form-tools-2.min.js',
+ 
+                            '//cdn.tinymce.com/4/tinymce.min.js'
+                            
+  
                         ] 
                     });
                 }]

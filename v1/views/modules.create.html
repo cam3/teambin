@@ -178,10 +178,114 @@
             </div>
 
 
-    </div></div>
-                        </div>
+    </div>
+
+      <div class="form-group">
+         
+            <div class="col-md-7">
+            
+                <div class="help-block"> Steps in a Module are the progression through teaching the desired topic. A step can be one of three Tools: <ol><li>Text</li> <li>Video</li> <li>Quiz</li> </ol></div>
+                <a href="#" ng-click="createStep()" role="button" class="btn red" > Create a Step </a>
+            </div>
+        </div>
+</div>
+<hr>
+<div class="alert alert-warning alert-dismissable" ng-show="allFields">
+                                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                                                <strong>Whoops!</strong> Looks like you missed either the Name or the Step Type. </div>
+<div class="row" style="padding:25px;" data-ng-repeat="step in steps">
+    
+                                                
+        <div class="form-group" >
+            <label class="control-label col-md-1">Step Name: </label>
+ 
+            <div class="col-md-4">
+                <div class="input-icon">
+                    <input type="text" ng-model="step.name" name="stepName" class="form-control" > 
+                </div>
+            </div>
+            <label class="control-label col-md-1">Step Type:</label>
+                <div class="col-md-3">
+                   
+
+                                                                <label class="mt-radio mt-radio-outline" style="padding: 0 25px;"> Text
+                                                                    <input type="radio" value="text" name="step.type" ng-model="step.type">
+                                                                    <span></span>
+                                                                </label>
+                                                                <label class="mt-radio mt-radio-outline" style="padding: 0 25px;"> Video
+                                                                    <input type="radio" value="video" name="step.video" ng-model="step.type">
+                                                                    <span></span>
+                                                                </label>
+                                                                <label class="mt-radio mt-radio-outline" style="padding: 0 25px;"> Quiz
+                                                                    <input type="radio" value="quiz" name="step.quiz" ng-model="step.type">
+                                                                    <span></span>
+                                                                </label>
+                                                            
+                        </div> 
+             
+                 <div class="col-md-3"> 
+                   
+                    <a href="#" ng-click="addStep(step.id)" role="button" class="btn green" > Add Step </a>
+                    <a href="#" ng-click="discardStep(step.id)" role="button" class="btn red" > Discard </a>
+                    
+                 </div> 
+
+            </div> 
+        </div>
+
+
+    <hr>
+<div class="portlet-title">
+                                                <div class="caption">
+                                                    <i class="fa fa-bell-o"></i>Saved Steps </div>
+                                                <div class="tools">
+                                                    <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
+                                                  
+                                                    <a href="javascript:;" class="reload" data-original-title="" title=""> </a>
+
+                                                </div>
+                                            </div>
+<div class="portlet-body">
+                                                <div class="table-scrollable">
+                                                    <table class="table table-striped table-bordered table-advance table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>#</th>
+                                                                <th>
+                                                                    <i class="fa fa-file"></i> Name </th>
+                                                                <th>
+                                                                    <i class="fa fa-object-ungroup"></i> Step Type </th>
+                                                                <th> </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="savedStep in savedSteps">
+                                                                <td class="highlight">
+                                                                    
+                                                                    
+                                                                </td>
+                                                                <td> {{savedStep.name}} </td>
+                                                                <td> {{savedStep.type}} </td>
+                                                                <td style="text-align: right;">
+                                                                    <a class="btn btn-outline btn-circle btn-sm purple" ng-click="editStep(savedStep.id)" data-toggle="modal" href="#editstepmodal">
+                                                                        <i class="fa fa-edit"></i> Edit Step Content</a> 
+                                                                    <a class="btn btn-outline btn-circle btn-sm red" ng-click="deleteStep(savedStep.id)">
+                                                                        <i class="fa fa-trash-o"></i> Delete Step</a>
+                                                                </td>
+                                                            </tr>
+                                                            
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <pre>Module JSON:
+{{newModule | json}}</pre>
+<pre>Steps JSON:
+{{savedSteps | json}}</pre>
+
+                                            </div>
+</div>
                         
-                    </div>
+</div>
                     <div class="form-actions">
                         <div class="row">
                             <div class="col-md-offset-3 col-md-9">
@@ -195,12 +299,144 @@
         </div>
     </div>
 </div>
+
+
+
+<div id="editstepmodal" class="modal fade bs-modal-lg in" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">Edit Step: {{editingStep.name}}</h4>
+            </div>
+            <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <!-- THE TEXT PORTION -->
+                            <div id="iftext" ng-show="editingStep.type == 'text'">                  
+                                <h3>Enter Text of Step Below</h3>
+                                <textarea class="form-control" rows="8" ng-model="editingStep.textInput"></textarea>
+                            </div>
+                            <p>{{editingStep.textInput}}</p>
+
+
+
+                            <!-- THE VIDEO PORTION -->
+                         <div id="ifvideo" ng-show="editingStep.type == 'video'">                  
+                                <h3>Enter Video Information Below</h3>
+                                    <div class="form-group" >
+                        <label class="control-label col-md-1" >Video URL:</label>
+                <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-icon">
+                                <input type="text" name="videoURL" class="form-control" ng-model="editingStep.videoURL"> 
+                            </div>
+                        </div>
+                        <label class="control-label col-md-1" >Host:</label>
+                            <div class="col-md-4">
+                               
+
+                                    <label class="mt-radio mt-radio-outline" style="padding: 0 25px;"> Youtube
+                                        <input type="radio" value="youtube" name="youtube" ng-model="editingStep.host">
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-radio mt-radio-outline" style="padding: 0 25px;" > Vimeo
+                                        <input type="radio" value="vimeo" name="vimeo" ng-model="editingStep.host">
+                                        <span></span>
+                                    </label>
+                                                            
+                                </div> 
+                            </div>
+                        </div>
+                        </div>
+
+                        <!-- THE Quiz PORTION -->
+                        <div id="iftext" ng-show="editingStep.type == 'quiz'">                  
+                                <h3>Build Your Quiz</h3>
+                               <a href="#" ng-click="addQuestion(editingStep.id)" role="button" class="btn red" style="margin-bottom:20px;" > Create Question </a>
+                        
+                            <div class="row" data-ng-repeat="question in editingStep.quiz">
+                            
+                                                                        
+
+                                <div class="portlet box purple-soft">
+                                            <div class="portlet-title" style="padding-top:10px;">
+                                                <div class="col-md-10">
+                                  <div class="form-group" >
+                                    <label class="control-label col-md-2">Question:</label>
+                         
+                                    <div class="col-md-10">
+                                        <div class="col-md-12">
+                                            <div class="input-icon">
+                                                <input type="text" ng-model="question.question" name="stepName" class="form-control" > 
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    
+                                </div></div>
+                                                <div class="tools">
+                                                   Collapse <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
+
+                                                
+    
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body form" style="display: block;">
+                                                <div class="col-md-12">
+                                                <p style="padding:15px;">Check the box next to the correct answer. <a href="#" ng-click="addAnswer(editingStep.id, question.id)" role="button" class="btn blue pull-right" style="margin-bottom:10px;" >Add Possible Answer</a></p></div>
+                                                               
+                                                                        <div data-ng-repeat="answer in question.answers" class="col-md-12">
+                                                                            <div class="radio">
+                                                                   
+                                                                                <div class="col-md-2" style="text-align: right;"><input checked type="radio" ng-value="answer.id"  name="correctoption" ng-model="question.correct_answer" ></div>
+                                                                                <div class="col-md-8"><input type="text" ng-model="answer.answer" class="form-control" ></div>
+                                                                                <div class="col-md-2">
+                                                                                <a href="#" ng-click="discardAnswer($index, editingStep.id, question.id, answer.id)" role="button" class="btn red" style="margin-bottom:20px;" >Discard</a></div>
+                                                                     
+                                                                            </div>
+                                                                        </div>
+
+                                            </div>
+                                        </div>
+
+
+                                   
+                                 
+
+                                
+
+
+
+                                    </div>
+
+
+                        </div> 
+
+
+
+                        
+                
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>
+                <button type="button" class="btn green">Save changes</button>
+            </div>
+        </div>
+    </div>
+
+
 <!-- END MAIN CONTENT -->
 <!-- BEGIN MAIN JS-->
 <script>
 function colorselected(obj) {
     $( "#colored" ).attr('class', 'bg-'+obj.value);
 };
+
+
 </script>
 <!-- BEGIN MAIN JS -->
     
